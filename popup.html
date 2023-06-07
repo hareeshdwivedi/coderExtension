@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/styles/bootstrapmin.css" />
+    <link rel="stylesheet" href="/assets/styles/bootstrapselectmin.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <script src="/assets/js/contest.js" defer></script>
+    <script src="js/algorithm.js" defer></script>
+    <script src="/assets/js/axiosmin.js" defer></script>
+    <title>Constest Uptdate</title>
+  </head>
+
+  <body>
+    <header>
+      <ul
+        class="nav nav-tabs nav-fill justify-content-around"
+        id="pills-tab nav-ul"
+        role="tablist"
+      >
+        <li class="nav-item">
+          <a
+            class="nav-link active custom-tab"
+            id="pills-contest-tab"
+            data-toggle="pill"
+            href="#pills-contest"
+            role="tab"
+            aria-controls="pills-contest"
+            aria-selected="true"
+          >
+            <b><span style="color: #2eb6f9"> <> </span> Contest</b></a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link custom-tab"
+            id="pills-chat-tab"
+            data-toggle="pill"
+            href="#pills-chat"
+            role="tab"
+            aria-controls="pills-chat"
+            aria-selected="false"
+          >
+            <!-- <img src="https://img.icons8.com/fluency/23/000000/headphones.png"/> -->
+            <span> <> </span> <b>ALgorithm</b>
+          </a>
+        </li>
+      </ul>
+    </header>
+
+    <main class="tab-content" id="pills-tabContent">
+      <section
+        class="tab-pane fade show active"
+        id="pills-contest"
+        role="tabpanel"
+        aria-labelledby="pills-contest-tab"
+      >
+        <div class="">
+          <div class="col-12 d-flex mb-3 justify-content-around contest-time">
+            <div class="form-check form-check-inline">
+              <button
+                type="button"
+                class="btn btn-outline-primary after-click"
+                id="ongoing"
+              >
+                Ongoing
+              </button>
+            </div>
+            <div class="form-check form-check-inline">
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                id="today"
+              >
+                Today
+              </button>
+            </div>
+            <div class="form-check form-check-inline">
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                id="upcoming"
+              >
+                Upcoming
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row ml-2 mr-2" id="search-bar">
+          <div class="srhEl pr-0 d-flex">
+            <!-- Multiselect dropdown -->
+            <select
+              multiple
+              data-style="bg-white rounded-pill px-4 shadow-sm "
+              class="selectpicker"
+              id="contest-platform"
+            >
+              <option value="CodeForces">CodeForces</option>
+              <option value="CodeChef">CodeChef</option>
+              <option value="LeetCode">LeetCode</option>
+              <option value="HackerEarth">HackerEarth</option>
+              <option value="HackerRank">HackerRank</option>
+              <option value="KickStart">KickStart</option>
+              <option value="AtCoder">Atcoder</option>
+              <option value="TopCoder">TopCoder</option></select
+            ><!-- End -->
+          </div>
+          <div class="filter">
+            <img src="./images/icons8-filter-64.png" id="filter-btn" alt="" />
+          </div>
+        </div>
+
+        <section id="contest-details">
+          <!-- Dynamically code will be updated here -->
+        </section>
+
+        <section class="contribute d-flex justify-content-center">
+          <div class="d-flex justify-content border-right">
+            <a href="https://algo-extension.herokuapp.com/contribute" target="_blank">Contribute?</a>
+            &nbsp;
+            <img src="./images/helping-hand-256.png" alt="" id="icon-size" />
+            &nbsp;
+          </div>
+          <div class="d-flex justify-content-around">
+            &nbsp;
+            <img src="./images/deafultUser.png" id="icon-size" alt="" />
+            &nbsp;
+            <a href="https://algo-extension.herokuapp.com/profile" target="_blank">PROFILE</a>
+          </div>
+        </section>
+      </section>
+      <!-- </div> -->
+
+      <section
+        class="tab-pane fade"
+        id="pills-chat"
+        role="tabpanel"
+        aria-labelledby="pills-chat-tab"
+      >
+        <form autocomplete="off" class="input-form d-flex">
+          <div class="autocomplete" style="width: 300px">
+            <input
+              id="myInput"
+              type="text"
+              name="myCountry"
+              placeholder="search"
+            />
+          </div>
+          <div class="filter">
+            <img src="./images/icons8-search-500.png" id="submitBtn" class="filter-search" alt="" />
+          </div>
+        </form>
+        <section class="row justify-content-center" id="codeEdi">
+          <!-- <div class="window" id="container1">
+            <div class="window-header">
+              <div class="action-buttons"></div>
+            </div>
+            <div class="window-body">
+            <textarea class="code-input" readonly>Hello</textarea>
+            </div>
+          </div> -->
+
+          <div
+            id="carouselExampleControls"
+            class="carousel slide"
+            data-ride="carousel"
+            data-interval="false"
+          >
+            <div class="carousel-inner" id="editor-content">
+              
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </section>
+        <!-- Section for Buttons -->
+        <section class="contribute d-flex justify-content-center">
+          <div class="d-flex justify-content border-right">
+            <a href="https://algo-extension.herokuapp.com/contribute" target="_blank">Contribute?</a>
+            &nbsp;
+            <img src="./images/helping-hand-256.png" alt="" id="icon-size" />
+            &nbsp;
+          </div>
+          <div class="d-flex justify-content-around">
+            &nbsp;
+            <img src="./images/deafultUser.png" id="icon-size" alt="" />
+            &nbsp;
+            <a href="https://algo-extension.herokuapp.com/profile" target="_blank">PROFILE</a>
+          </div>
+        </section>
+      </section>
+      </section>
+
+      <!-- end -->
+    </main>
+    <!-- <script src="/js/Codeeditor.js"></script> -->
+    <script src="/assets/js/jqueryslimmin.js"></script>
+    <script src="/assets/js/bootstrapbundle.js"></script>
+    <script src="/assets/js/bootstrapselectmin.js"></script>
+    <script src="/assets/js/icon.js"></script>
+  </body>
+</html>
